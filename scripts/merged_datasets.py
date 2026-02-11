@@ -9,9 +9,7 @@ Created on Tue Feb 10 17:32:06 2026
 import pandas as pd
 import os
 
-# ==================================================================
-# FILE PATH - YOUR FILES ARE IN Downloads/mydataset/
-# ==================================================================
+
 folder_path = "/Users/gabriellucky/Downloads/mydataset/"
 
 print("="*70)
@@ -19,9 +17,9 @@ print("MERGING FINGERTIPS DATASETS")
 print("="*70)
 print(f"\nLooking for files in: {folder_path}")
 
-# ==================================================================
+
 # CHECK IF FILES EXIST
-# ==================================================================
+
 files_needed = [
     'indicators-CountiesUAsfromApr2023_data.csv',
     'indicators-CountiesUAsfromApr2023_data__1_.csv',
@@ -48,9 +46,9 @@ if missing_files:
 else:
     print("\n✅ All files found! Starting merge...")
     
-    # ==================================================================
+    
     # LOAD THE FILES
-    # ==================================================================
+    
     print("\n1. Loading files...")
     
     obesity = pd.read_csv(folder_path + 'indicators-CountiesUAsfromApr2023_data.csv', 
@@ -73,9 +71,9 @@ else:
     del smoking_full
     print(f"   ✓ Smoking (filtered): {len(smoking)} rows")
     
-    # ==================================================================
+    
     # PROCESS VARIABLES
-    # ==================================================================
+    
     print("\n2. Processing variables...")
     
     obesity['year'] = obesity['Time period'].str.split('/').str[0].astype(int)
@@ -96,9 +94,8 @@ else:
     
     print("   ✓ All variables processed")
     
-    # ==================================================================
     # MERGE ALL 4 DATASETS
-    # ==================================================================
+    
     print("\n3. Merging datasets...")
     
     merged = obesity.merge(activity, on=['Area Code', 'Area Name', 'year'], how='inner')
@@ -109,10 +106,10 @@ else:
     
     merged = merged.merge(diet, on=['Area Code', 'Area Name', 'year'], how='inner')
     print(f"   After adding diet: {len(merged)} rows")
+
     
-    # ==================================================================
     # CLEAN DATA
-    # ==================================================================
+    
     print("\n4. Cleaning data...")
     
     # Remove England (national aggregate)
@@ -123,9 +120,9 @@ else:
     
     print(f"   ✓ Final dataset: {len(merged)} rows")
     
-    # ==================================================================
+    
     # SUMMARY STATISTICS
-    # ==================================================================
+    
     print("\n" + "="*70)
     print("✅ MERGE COMPLETE!")
     print("="*70)
@@ -148,9 +145,9 @@ else:
     print("\n🔍 First 10 rows:")
     print(merged.head(10))
     
-    # ==================================================================
+    
     # SAVE THE MERGED DATASET
-    # ==================================================================
+    
     output_file = folder_path + 'FINGERTIPS_MERGED_COMPLETE.csv'
     merged.to_csv(output_file, index=False)
     
