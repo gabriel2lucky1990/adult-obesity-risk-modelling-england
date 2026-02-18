@@ -1,6 +1,6 @@
 # Predicting Adult Obesity from Health Behaviours in England
 
-**MSc Data Science Dissertation**  
+**MSc Data Science Project**  
 **University of Hertfordshire**  
 **Student:** Gabriel Lucky Lotanna  
 **Submission Date:** April 22, 2026
@@ -32,7 +32,7 @@
 
 ## Project Overview
 
-This dissertation investigates the relationship between behavioural health indicators and adult obesity prevalence across 147 English Local Authorities using data from NHS Fingertips (2020-2023).
+This Project investigates the relationship between behavioural health indicators and adult obesity prevalence across 147 English Local Authorities using data from NHS Fingertips (2020-2023).
 
 The analysis employs multiple machine learning approaches to identify which health behaviors most strongly predict obesity and to understand the temporal patterns that emerged during the COVID-19 pandemic and subsequent cost-of-living crisis.
 
