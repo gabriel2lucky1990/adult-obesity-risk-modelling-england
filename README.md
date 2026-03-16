@@ -3,7 +3,7 @@
 **MSc Data Science Dissertation Project**  
 **University of Hertfordshire**  
 **Student:** Gabriel Lucky Lotanna (Happiness)  
-**Supervisor:** Vid Irsic  
+**Supervisor:**   Dhairya Kataria 
 **Submission Date:** April 22, 2026
 
 ---
